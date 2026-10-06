@@ -303,9 +303,7 @@
       overflow: hidden;
     }
 
-    /* ========================================================= */
-    /* 2400 x 1350 INFOGRAPHIC DOM (LARGE, CRISP, LEGIBLE TEXT) */
-    /* ========================================================= */
+    /* 2400 x 1350 INFOGRAPHIC DOM */
     #infographic-canvas {
       width: 2400px;
       height: 1350px;
@@ -472,7 +470,7 @@
     #infographic-canvas .app-strength { color: #cbd5e1; line-height: 1.25; font-size: 17px; }
     #infographic-canvas .app-friction { color: #94a3b8; line-height: 1.25; font-size: 17px; }
 
-    /* Column 2: Core Attributes & Milestones */
+    /* Column 2: Attributes & Milestones */
     #infographic-canvas .center-content {
       display: flex;
       flex-direction: column;
@@ -570,7 +568,7 @@
     }
     #infographic-canvas .future-text { font-size: 17px; color: #cbd5e1; line-height: 1.35; }
 
-    /* Column 3: Comparison Matrix / Pros & Cons */
+    /* Column 3: Comparison / Pros & Cons */
     #infographic-canvas .swot-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -705,7 +703,7 @@
 
       <div class="field-group">
         <label class="field-label">Subject / Comparison Topic</label>
-        <input type="text" class="input-control" id="ctrl-subject" value="Top 15 Footballers of All Time" oninput="updateCurrentCardField('title', this.value)">
+        <input type="text" class="input-control" id="ctrl-subject" placeholder="e.g. Top 15 Footballers of All Time" oninput="updateCurrentCardField('title', this.value)">
       </div>
 
       <div class="field-group">
@@ -735,16 +733,16 @@
       <div class="field-group">
         <label class="field-label">Number of Infographic Cards</label>
         <select class="input-control" id="ctrl-card-count" onchange="adjustCardCount(this.value)">
-          <option value="1">1 Standalone Infographic</option>
+          <option value="1" selected>1 Standalone Infographic</option>
           <option value="2">2-Part Comparison Series</option>
-          <option value="3" selected>3-Part Series</option>
+          <option value="3">3-Part Series</option>
           <option value="5">5-Part Deep Dive</option>
         </select>
       </div>
 
       <div class="field-group">
         <label class="field-label">Specific Details / Notes (Optional)</label>
-        <textarea class="input-control" id="ctrl-directives" placeholder="e.g. Include Pelé, Maradona, Messi, and Cristiano Ronaldo. Contrast international trophies with club consistency." oninput="generateCompiledPrompt()"></textarea>
+        <textarea class="input-control" id="ctrl-directives" placeholder="e.g. Specific entities to include, custom metrics, eras, or priority attributes." oninput="generateCompiledPrompt()"></textarea>
       </div>
 
       <button class="btn-generate-ai" id="btn-run-ai" onclick="runAiGeneration()">
@@ -793,14 +791,14 @@
                 <div class="card-brand-title" contenteditable="true">AI IS BEAUTIFUL BY 3SCI.COM</div>
               </div>
               <div class="header-meta">
-                <span class="sector-pill" id="disp-sector" contenteditable="true">Sports & Culture</span>
-                <span class="day-badge" id="disp-badge" contenteditable="true">CARD 1 / 3</span>
+                <span class="sector-pill" id="disp-sector" contenteditable="true">Category / Sector</span>
+                <span class="day-badge" id="disp-badge" contenteditable="true">CARD 1 / 1</span>
               </div>
             </header>
 
             <div class="hero-row">
-              <h1 class="main-title" id="disp-title" contenteditable="true">Top 15 Footballers of All Time: The Definitive Ranking</h1>
-              <div class="overview-box" id="disp-overview" contenteditable="true">A comprehensive comparison of football's greatest icons, evaluating international trophies, individual Ballon d'Or dominance, technical mastery, and enduring global legacy across eras.</div>
+              <h1 class="main-title" id="disp-title" contenteditable="true">Enter Infographic Title / Headline Here</h1>
+              <div class="overview-box" id="disp-overview" contenteditable="true">Provide a concise summary establishing what is being compared, key criteria, and the main context.</div>
             </div>
 
             <div class="main-grid">
@@ -809,7 +807,7 @@
               <div class="panel">
                 <div class="panel-header">
                   <div class="panel-title" id="col1-header-title" contenteditable="true">TOP 15 RESULTS</div>
-                  <span class="panel-tag" id="col1-header-tag" contenteditable="true">ALL-TIME RANKING</span>
+                  <span class="panel-tag" id="col1-header-tag" contenteditable="true">RANKING</span>
                 </div>
                 <div class="table-scroll" id="disp-apps">
                   <!-- Injected via JavaScript -->
@@ -819,29 +817,29 @@
               <!-- Column 2: Core Attributes & Milestones -->
               <div class="panel">
                 <div class="panel-header">
-                  <div class="panel-title" id="col2-header-title" contenteditable="true">CAREER HIGHLIGHTS & KEY STATS</div>
-                  <span class="panel-tag" id="col2-header-tag" contenteditable="true">PERFORMANCE</span>
+                  <div class="panel-title" id="col2-header-title" contenteditable="true">KEY HIGHLIGHTS & SPECS</div>
+                  <span class="panel-tag" id="col2-header-tag" contenteditable="true">DETAILS</span>
                 </div>
 
                 <div class="center-content">
                   <div class="diagram-box">
                     <div class="diagram-row">
-                      <span class="diagram-label" id="disp-diag-label-1" contenteditable="true">Early Era</span>
+                      <span class="diagram-label" id="disp-diag-label-1" contenteditable="true">Tier 1</span>
                       <div class="node-pills" id="disp-sensors"></div>
                     </div>
                     <div class="diagram-row">
-                      <span class="diagram-label" id="disp-diag-label-2" contenteditable="true">Peak Era</span>
+                      <span class="diagram-label" id="disp-diag-label-2" contenteditable="true">Tier 2</span>
                       <div class="node-pills" id="disp-hubs"></div>
                     </div>
                     <div class="diagram-row">
-                      <span class="diagram-label" id="disp-diag-label-3" contenteditable="true">Modern Era</span>
+                      <span class="diagram-label" id="disp-diag-label-3" contenteditable="true">Tier 3</span>
                       <div class="node-pills" id="disp-actions"></div>
                     </div>
                   </div>
 
                   <div class="adoption-box">
                     <div class="adoption-title">
-                      <span id="disp-metrics-title" contenteditable="true">KEY METRICS & COMPARISONS</span>
+                      <span id="disp-metrics-title" contenteditable="true">KEY METRICS & RATINGS</span>
                       <span style="color: #00e5be;" contenteditable="true">BENCHMARK</span>
                     </div>
                     <div id="disp-metrics"></div>
@@ -851,11 +849,11 @@
                 </div>
               </div>
 
-              <!-- Column 3: Strengths, Weaknesses & Legacy -->
+              <!-- Column 3: Strengths, Weaknesses & Comparison -->
               <div class="panel">
                 <div class="panel-header">
-                  <div class="panel-title" id="col3-header-title" contenteditable="true">LEGACY & HEAD-TO-HEAD MATRIX</div>
-                  <span class="panel-tag" id="col3-header-tag" contenteditable="true">COMPARISON</span>
+                  <div class="panel-title" id="col3-header-title" contenteditable="true">PROS, CONS & COMPARISON</div>
+                  <span class="panel-tag" id="col3-header-tag" contenteditable="true">BREAKDOWN</span>
                 </div>
                 <div class="swot-grid">
                   <div class="swot-card swot-s">
@@ -863,15 +861,15 @@
                     <ul class="swot-ul" id="disp-swot-s"></ul>
                   </div>
                   <div class="swot-card swot-w">
-                    <div class="swot-header" id="swot-title-w" contenteditable="true">DEBATABLE GAPS</div>
+                    <div class="swot-header" id="swot-title-w" contenteditable="true">KEY DRAWBACKS</div>
                     <ul class="swot-ul" id="disp-swot-w"></ul>
                   </div>
                   <div class="swot-card swot-o">
-                    <div class="swot-header" id="swot-title-o" contenteditable="true">STANDOUT ACHIEVEMENTS</div>
+                    <div class="swot-header" id="swot-title-o" contenteditable="true">STANDOUT FACTORS</div>
                     <ul class="swot-ul" id="disp-swot-o"></ul>
                   </div>
                   <div class="swot-card swot-t">
-                    <div class="swot-header" id="swot-title-t" contenteditable="true">ERAS & RIVALS</div>
+                    <div class="swot-header" id="swot-title-t" contenteditable="true">COMPETITIVE RIVALS</div>
                     <ul class="swot-ul" id="disp-swot-t"></ul>
                   </div>
                 </div>
@@ -882,12 +880,12 @@
             <!-- Footer Bar -->
             <div class="summary-bar">
               <div class="summary-tag" contenteditable="true">EXECUTIVE VERDICT</div>
-              <div class="summary-text" id="disp-verdict" contenteditable="true">While Pelé and Maradona defined international prestige in the 20th century, Lionel Messi and Cristiano Ronaldo sustained unprecedented elite output across two unbroken decades at the sport's highest tactical level.</div>
+              <div class="summary-text" id="disp-verdict" contenteditable="true">Bottom-line takeaway summarizing the key conclusion or winning option.</div>
             </div>
 
             <footer>
               <span contenteditable="true">3sci.com Intelligence Units • Visual Comparison Studio</span>
-              <span id="disp-footer-info" contenteditable="true">Card 1 of 3 Infographic Series</span>
+              <span id="disp-footer-info" contenteditable="true">Card 1 of 1 Infographic Series</span>
             </footer>
           </div>
 
@@ -897,162 +895,52 @@
   </div>
 
   <script>
-    let cards = [
-      {
-        badge: "CARD 1 / 3",
-        sector: "Football Legends",
-        title: "Top 15 Footballers of All Time: The Definitive Ranking",
-        overview: "A comprehensive comparison of football's greatest icons, evaluating international trophies, individual Ballon d'Or dominance, technical mastery, and enduring global legacy across eras.",
-        verdict: "While Pelé and Maradona defined international prestige in the 20th century, Lionel Messi and Cristiano Ronaldo sustained unprecedented elite output across two unbroken decades at the sport's highest tactical level.",
+    // Clean default template generator
+    function getCleanCardTemplate(num = 1, total = 1) {
+      return {
+        badge: `CARD ${num} /${total}`,
+        sector: "Category / Sector",
+        title: "Enter Infographic Title / Headline Here",
+        overview: "Provide a concise summary establishing what is being compared, key criteria, and the main context.",
+        verdict: "Bottom-line takeaway summarizing the key conclusion or winning option.",
         col1_title: "TOP 15 RESULTS",
-        col1_tag: "ALL-TIME RANKING",
-        col2_title: "CAREER HIGHLIGHTS & KEY STATS",
-        col2_tag: "PERFORMANCE",
-        col3_title: "LEGACY & HEAD-TO-HEAD MATRIX",
-        col3_tag: "COMPARISON",
-        diag_labels: ["Early Era", "Peak Era", "Modern Era"],
-        apps: [
-          { name: "1. Lionel Messi", role: "Argentina / Barcelona", strength: "8 Ballons d'Or & World Cup 2022", friction: "Early international heartbreaks" },
-          { name: "2. Pelé", role: "Brazil / Santos", strength: "3 World Cups & 1,000+ goals", friction: "Played entirely outside European leagues" },
-          { name: "3. Diego Maradona", role: "Argentina / Napoli", strength: "Solo 1986 World Cup & Napoli titles", friction: "Short career longevity at peak" },
-          { name: "4. Cristiano Ronaldo", role: "Portugal / Real Madrid", strength: "5 UCL titles & all-time top scorer", friction: "No World Cup final appearance" },
-          { name: "5. Johan Cruyff", role: "Netherlands / Ajax", strength: "Invented modern Total Football", friction: "Lost the 1974 World Cup final" },
-          { name: "6. Zinedine Zidane", role: "France / Real Madrid", strength: "Decisive in 1998 WC & 2002 UCL finals", friction: "Occasional disciplinary outbursts" },
-          { name: "7. Ronaldo Nazário", role: "Brazil / Inter / Madrid", strength: "Most explosive striker in history", friction: "Severe knee injuries cut short prime" },
-          { name: "8. Franz Beckenbauer", role: "Germany / Bayern Munich", strength: "Revolutionized the Sweeper role", friction: "Defensive focus overshadowed by goalscorers" },
-          { name: "9. Alfredo Di Stéfano", role: "Argentina / Real Madrid", strength: "Won 5 consecutive European Cups", friction: "Never played in a World Cup" },
-          { name: "10. Michel Platini", role: "France / Juventus", strength: "3 consecutive Ballons d'Or & Euro 1984", friction: "Retirement at age 32" },
-          { name: "11. Ronaldinho", role: "Brazil / Barcelona", strength: "Peak magic & standing ovation at Bernabéu", friction: "Very short prime at the top" },
-          { name: "12. Paolo Maldini", role: "Italy / AC Milan", strength: "25 seasons at world-class level", friction: "Never won a major tournament with Italy" },
-          { name: "13. Ferenc Puskás", role: "Hungary / Real Madrid", strength: "Incredible 84 goals in 85 caps", friction: "Shock 1954 World Cup final upset" },
-          { name: "14. Andrés Iniesta", role: "Spain / Barcelona", strength: "2010 World Cup winning goal & master passer", friction: "Low individual goal tally" },
-          { name: "15. George Best", role: "N. Ireland / Man United", strength: "Unmatched raw dribbling skill", friction: "Short career peak and off-pitch issues" }
-        ],
-        sensors: ["Pelé (1958-70)", "Garrincha (1962)", "Puskás (1954)"],
-        hubs: ["Maradona (1986)", "Cruyff (1974)", "Zidane (1998)"],
-        actions: ["Messi (2004-Now)", "C. Ronaldo (2003-Now)", "Iniesta (2010)"],
-        metrics_title: "KEY METRICS & COMPARISONS",
+        col1_tag: "RANKING",
+        col2_title: "KEY HIGHLIGHTS & SPECS",
+        col2_tag: "DETAILS",
+        col3_title: "PROS, CONS & COMPARISON",
+        col3_tag: "BREAKDOWN",
+        diag_labels: ["Tier 1", "Tier 2", "Tier 3"],
+        apps: Array(15).fill(null).map((_, i) => ({
+          name: `${i + 1}. Item / Option Name`,
+          role: "Role / Sub-Category",
+          strength: "Primary strength or highlight",
+          friction: "Key limitation or friction point"
+        })),
+        sensors: ["Highlight A", "Highlight B", "Highlight C"],
+        hubs: ["Core Factor 1", "Core Factor 2"],
+        actions: ["Outcome 1", "Outcome 2", "Outcome 3"],
+        metrics_title: "KEY METRICS & RATINGS",
         metrics: [
-          { label: "Career Goal Consistency", val: 94 },
-          { label: "International Trophies Won", val: 86 },
-          { label: "Global Legacy & Cultural Impact", val: 98 }
+          { label: "Performance / Quality", val: 80 },
+          { label: "Value / Defensibility", val: 65 },
+          { label: "Market / Fan Score", val: 85 }
         ],
         future: [
-          { name: "Erling Haaland & Kylian Mbappé", desc: "Setting pace to challenge all-time Champions League and World Cup goal tallies." },
-          { name: "The Modern Longevity Shift", desc: "Advanced recovery and sports science allowing stars to compete past age 38." }
+          { name: "Key Trend / What's Ahead", desc: "Brief takeaway on emerging developments or shifts." },
+          { name: "Market Outlook", desc: "How these choices will stack up moving forward." }
         ],
-        swot_headers: ["GREATEST STRENGTHS", "DEBATABLE GAPS", "STANDOUT ACHIEVEMENTS", "ERAS & RIVALS"],
+        swot_headers: ["GREATEST STRENGTHS", "KEY DRAWBACKS", "STANDOUT FACTORS", "COMPETITIVE RIVALS"],
         swot: {
-          strengths: ["Unrivaled skill and playmaking across eras", "Decisive performances in major tournament finals", "Global cultural impact transcending sport"],
-          weaknesses: ["Cross-era tactical and fitness differences make direct stats hard to compare", "Some legends lacked European league testing", "Differing quality in teammate rosters"],
-          opportunities: ["Modern digital footage preserving every match forever", "Global tournaments expanding player recognition", "Statistical modeling providing deeper context"],
-          threats: ["Over-reliance on pure goal numbers ignores defensive and midfield masters", "Nostalgia bias favoring older eras over modern intensity", "Burnout from exhausting 65-match annual schedules"]
+          strengths: ["Primary advantages of top selections", "Proven consistency over time", "Reliable performance benchmarks"],
+          weaknesses: ["Areas with room for improvement", "Points where alternatives hold an edge", "Notable trade-offs to consider"],
+          opportunities: ["Emerging features and growth vectors", "Untapped value propositions", "Ways to pull ahead of rivals"],
+          threats: ["Rising pressure from challengers", "Shifting market dynamics", "External factors affecting long-term viability"]
         }
-      },
-      {
-        badge: "CARD 2 / 3",
-        sector: "Football Legends",
-        title: "Messi vs. Ronaldo: Two Decades of Unrivaled Rivalry",
-        overview: "A direct head-to-head breakdown of the two players who redefined football between 2004 and 2024, trading scoring records and individual awards in the game's greatest duel.",
-        verdict: "Messi edges the creative and international debate with his 2022 World Cup and 8 Ballons d'Or, while Cristiano Ronaldo remains the ultimate big-game goalscoring athlete with 5 Champions League crowns.",
-        col1_title: "TOP 15 RESULTS",
-        col1_tag: "KEY BATTLEGROUNDS",
-        col2_title: "HEAD-TO-HEAD COMPARISON",
-        col2_tag: "THE NUMBERS",
-        col3_title: "STRENGTHS & PROS/CONS",
-        col3_tag: "DUEL",
-        diag_labels: ["Playmaking", "Athleticism", "Clutch Moments"],
-        apps: [
-          { name: "1. Total Career Goals", role: "Scoring Record", strength: "Ronaldo: 900+ official goals", friction: "Messi closely trailing in fewer games" },
-          { name: "2. Ballon d'Or Trophies", role: "Individual Awards", strength: "Messi: 8 trophies (Record)", friction: "Ronaldo: 5 trophies" },
-          { name: "3. Champions League", role: "European Stage", strength: "Ronaldo: 5 titles & all-time top scorer", friction: "Messi: 4 titles with Barcelona" },
-          { name: "4. World Cup Glory", role: "International Peak", strength: "Messi: Winner 2022 + Golden Ball", friction: "Ronaldo: 0 World Cup finals" },
-          { name: "5. Career Assists", role: "Chance Creation", strength: "Messi: 370+ assists", friction: "Ronaldo focused primarily on finishing" },
-          { name: "6. Free Kick Precision", role: "Set Pieces", strength: "Messi: 65+ free-kick goals", friction: "Ronaldo: 64 free-kick goals" },
-          { name: "7. Peak Season Goals", role: "Single-Year High", strength: "Messi: 91 goals in 2012 (World Record)", friction: "Ronaldo: 69 goals in 2013" },
-          { name: "8. Champions League KOs", role: "Knockout Clutch", strength: "Ronaldo: 67 knockout-stage goals", friction: "Messi: 49 knockout goals" },
-          { name: "9. International Titles", role: "National Team", strength: "Messi: World Cup + 2 Copa Américas", friction: "Ronaldo: Euro 2016 + Nations League" },
-          { name: "10. Dribbling Success", role: "Take-Ons", strength: "Messi: All-time highest successful dribbles", friction: "Ronaldo shifted to pure box poacher" },
-          { name: "11. Penalty Reliability", role: "Spot Kicks", strength: "Ronaldo: 85%+ conversion rate under pressure", friction: "Messi has missed occasional key penalties" },
-          { name: "12. Header Dominance", role: "Aerial Power", strength: "Ronaldo: 150+ headed goals & incredible leap", friction: "Messi rarely scores aerial goals" },
-          { name: "13. El Clásico Record", role: "Direct Showdown", strength: "Messi: 26 goals in Barcelona vs Madrid", friction: "Ronaldo: 18 goals in El Clásico" },
-          { name: "14. Longevity Past 35", role: "Physical Ageing", strength: "Both performing at top level beyond 37", friction: "High wear and tear on joints" },
-          { name: "15. Global Fanbase", role: "Brand Footprint", strength: "Ronaldo: #1 followed person on Instagram", friction: "Messi: Massive global brand equity" }
-        ],
-        sensors: ["Key Passes / Vision", "Close Control", "Through Balls"],
-        hubs: ["Vertical Sprint Speed", "Heading Power", "Physical Strength"],
-        actions: ["Late Game Winner", "Hat-Tricks", "Pressure Penalties"],
-        metrics_title: "DIRECT SCORECARD TALLIES",
-        metrics: [
-          { label: "Messi: Technical & Playmaking Mastery", val: 96 },
-          { label: "Ronaldo: Physical & Goal Poaching Power", val: 95 },
-          { label: "Clutch Big-Game Impact", val: 92 }
-        ],
-        future: [
-          { name: "The Post-Rivalry Era", desc: "No two individuals are likely to dominate the sport simultaneously for 15+ uninterrupted seasons again." },
-          { name: "Global League Expansion", desc: "Their moves to MLS and the Saudi Pro League triggered historic commercial growth outside Europe." }
-        ],
-        swot_headers: ["MESSI STRENGTHS", "MESSI CRITIQUES", "RONALDO STRENGTHS", "RONALDO CRITIQUES"],
-        swot: {
-          strengths: ["Natural vision, spatial balance, and passing wizardry", "Unmatchable goal-and-assist combination", "Completed the game with the 2022 World Cup"],
-          weaknesses: ["Quieter on-pitch vocal leadership style", "Less physically imposing in aerial set pieces", "Spent peak years in one single system"],
-          opportunities: ["Relentless drive, physical discipline, and work ethic", "Conquered three major leagues (EPL, La Liga, Serie A)", "Decisive Champions League knockout match-winner"],
-          threats: ["Relied heavily on teammates for service in later years", "Lower assist count compared to Messi", "World Cup knockout goal drought"]
-        }
-      },
-      {
-        badge: "CARD 3 / 3",
-        sector: "Football Legends",
-        title: "Trophy Cabinet & Legacy: The Golden Age of Champions",
-        overview: "Comparing how the greatest players of each generation converted personal talent into team silverware across domestic leagues, continental cups, and international tournaments.",
-        verdict: "Individual greatness is immortalized through silverware; those who carried their nations to international glory hold a unique emotional place in football history.",
-        col1_title: "TOP 15 RESULTS",
-        col1_tag: "MOST DECORATED",
-        col2_title: "SILVERWARE & MEDALS",
-        col2_tag: "TROPHY CABINET",
-        col3_title: "IMPACT ON THE MODERN GAME",
-        col3_tag: "EVOLUTION",
-        diag_labels: ["Domestic Titles", "Continental Cups", "World Cups"],
-        apps: [
-          { name: "1. Dani Alves", role: "Brazil / Barcelona", strength: "43 senior team trophies", friction: "Did not win a World Cup" },
-          { name: "2. Lionel Messi", role: "Argentina / Barcelona", strength: "44 senior team trophies", friction: "Early Copa América runner-up finishes" },
-          { name: "3. Maxwell", role: "Brazil / PSG / Ajax", strength: "37 senior team trophies", friction: "Squad player rather than main protagonist" },
-          { name: "4. Ryan Giggs", role: "Wales / Man United", strength: "13 Premier League titles", friction: "Never played in an international tournament" },
-          { name: "5. Cristiano Ronaldo", role: "Portugal / Real Madrid", strength: "34 senior team trophies", friction: "Fewer domestic titles than Messi" },
-          { name: "6. Gerard Piqué", role: "Spain / Barcelona", strength: "World Cup, Euros & 4 UCL titles", friction: "Benefited from legendary midfield partners" },
-          { name: "7. Andrés Iniesta", role: "Spain / Barcelona", strength: "35 trophies including WC & 2 Euros", friction: "Fewer individual awards than forwards" },
-          { name: "8. Sergio Busquets", role: "Spain / Barcelona", strength: "Won every major trophy available", friction: "Underappreciated defensive contributions" },
-          { name: "9. Xavi Hernández", role: "Spain / Barcelona", strength: "33 trophies as midfield conductor", friction: "Relied on possession-heavy tactics" },
-          { name: "10. Zlatan Ibrahimović", role: "Sweden / Multiple", strength: "League titles in 4 different countries", friction: "Never won the UEFA Champions League" },
-          { name: "11. Karim Benzema", role: "France / Real Madrid", strength: "5 Champions League titles & Ballon d'Or", friction: "Missed France's 2018 World Cup win" },
-          { name: "12. Thomas Müller", role: "Germany / Bayern Munich", strength: "33 trophies & World Cup winner", friction: "Unconventional, unorthodox playing style" },
-          { name: "13. Manuel Neuer", role: "Germany / Bayern Munich", strength: "Redefined the modern Goalkeeper position", friction: "Aggressive sweeper style caused occasional errors" },
-          { name: "14. Luka Modrić", role: "Croatia / Real Madrid", strength: "6 Champions Leagues & WC Finalist", friction: "Underdog national team missed out on gold" },
-          { name: "15. Toni Kroos", role: "Germany / Real Madrid", strength: "6 Champions Leagues & 2014 World Cup", friction: "Quiet playing style avoided media spotlight" }
-        ],
-        sensors: ["La Liga / Premier League", "Serie A / Bundesliga", "Ligue 1"],
-        hubs: ["UEFA Champions League", "Copa Libertadores", "Club World Cup"],
-        actions: ["FIFA World Cup", "UEFA European Championship", "Copa América"],
-        metrics_title: "TROPHY IMPACT DISTRIBUTION",
-        metrics: [
-          { label: "Domestic League Dominance", val: 92 },
-          { label: "Champions League Knockout Weight", val: 88 },
-          { label: "International Tournament Gold", val: 94 }
-        ],
-        future: [
-          { name: "Expanded 32-Team Club World Cup", desc: "Creating a massive new piece of club silverware starting in 2025." },
-          { name: "48-Team FIFA World Cup", desc: "Allowing more nations to compete, but diluting group-stage difficulty." }
-        ],
-        swot_headers: ["DOMESTIC DOMINANCE", "TACTICAL OVERLAP", "INTERNATIONAL PEAK", "RIVAL BLOCKS"],
-        swot: {
-          strengths: ["Proven consistency across 38-game league seasons", "Mental resilience in pressure knockout finals", "Versatility adapting to different coaches and tactics"],
-          weaknesses: ["Super-clubs hoard talent, skewing domestic stats", "Tournament knockout games often come down to luck", "Fewer opportunities for small-nation legends"],
-          opportunities: ["Winning with underdog nations brings greater legacy points", "Multi-league champions earn respect across borders", "Leadership through clutch tournament moments"],
-          threats: ["Calendar congestion causing serious player fatigue", "Over-commercialization diminishing domestic cup prestige", "Financial gaps creating predictable league outcomes"]
-        }
-      }
-    ];
+      };
+    }
 
+    // Always start with a single, fresh, clean card
+    let cards = [getCleanCardTemplate(1, 1)];
     let currentCardIndex = 0;
 
     // Viewport Auto-Fitting Logic
@@ -1102,41 +990,7 @@
 
     function addNewCard() {
       const newNum = cards.length + 1;
-      cards.push({
-        badge: `CARD ${newNum} /${newNum}`,
-        sector: cards[0].sector,
-        title: `Topic Breakdown Part ${newNum}`,
-        overview: "An easy-to-read comparison breaking down the top choices, key highlights, pros and cons, and real-world takeaways.",
-        verdict: "Takeaway summary highlighting what matters most when comparing these options.",
-        col1_title: "TOP 15 RESULTS",
-        col1_tag: "RANKING",
-        col2_title: "KEY HIGHLIGHTS & STATS",
-        col2_tag: "DETAILS",
-        col3_title: "PROS, CONS & COMPARISON",
-        col3_tag: "BREAKDOWN",
-        diag_labels: ["Category A", "Category B", "Category C"],
-        apps: [...cards[0].apps],
-        sensors: ["Top Pick 1", "Top Pick 2", "Top Pick 3"],
-        hubs: ["Key Factor 1", "Key Factor 2"],
-        actions: ["Result 1", "Result 2", "Result 3"],
-        metrics_title: "KEY METRICS",
-        metrics: [
-          { label: "Overall Quality / Performance", val: 85 },
-          { label: "Value / Long-Term Appeal", val: 78 },
-          { label: "Popularity & Fan Score", val: 90 }
-        ],
-        future: [
-          { name: "What to Watch Next", desc: "Upcoming trends and rising names to keep on your radar." },
-          { name: "The Big Picture", desc: "How these choices compare against modern alternatives." }
-        ],
-        swot_headers: ["BIGGEST PROS", "BIGGEST CONS", "STANDOUT POINTS", "KEY RIVALS"],
-        swot: {
-          strengths: ["Clear advantages that stand out immediately", "Proven track record of high performance", "High quality and dependable results"],
-          weaknesses: ["Areas where there is room for improvement", "Points where alternatives might be better", "Potential drawbacks to keep in mind"],
-          opportunities: ["Future improvements and growing popularity", "Unique features that offer great value", "Ways this choice beats the competition"],
-          threats: ["Tough competition from rising alternatives", "Shifting tastes and changing trends", "Factors that could affect long-term value"]
-        }
-      });
+      cards.push(getCleanCardTemplate(newNum, newNum));
 
       cards.forEach((c, idx) => {
         c.badge = `CARD ${idx + 1} /${cards.length}`;
@@ -1182,7 +1036,6 @@
       document.getElementById('disp-verdict').innerText = card.verdict;
       document.getElementById('disp-footer-info').innerText = `${card.badge} Infographic Series`;
 
-      // Dynamic Column Headers
       document.getElementById('col1-header-title').innerText = card.col1_title || "TOP 15 RESULTS";
       document.getElementById('col1-header-tag').innerText = card.col1_tag || "RANKING";
       document.getElementById('col2-header-title').innerText = card.col2_title || "KEY HIGHLIGHTS & STATS";
@@ -1190,7 +1043,6 @@
       document.getElementById('col3-header-title').innerText = card.col3_title || "PROS, CONS & COMPARISON";
       document.getElementById('col3-header-tag').innerText = card.col3_tag || "BREAKDOWN";
 
-      // Render Top 15 Apps / Results
       const appsContainer = document.getElementById('disp-apps');
       appsContainer.innerHTML = (card.apps || []).map(a => `
         <div class="app-row">
@@ -1203,18 +1055,16 @@
         </div>
       `).join('');
 
-      // Diagram / Highlights
-      const dLabels = card.diag_labels || ["Phase 1", "Phase 2", "Phase 3"];
-      document.getElementById('disp-diag-label-1').innerText = dLabels[0] || "Early Era";
-      document.getElementById('disp-diag-label-2').innerText = dLabels[1] || "Peak Era";
-      document.getElementById('disp-diag-label-3').innerText = dLabels[2] || "Modern Era";
+      const dLabels = card.diag_labels || ["Tier 1", "Tier 2", "Tier 3"];
+      document.getElementById('disp-diag-label-1').innerText = dLabels[0] || "Tier 1";
+      document.getElementById('disp-diag-label-2').innerText = dLabels[1] || "Tier 2";
+      document.getElementById('disp-diag-label-3').innerText = dLabels[2] || "Tier 3";
 
       document.getElementById('disp-sensors').innerHTML = (card.sensors || []).map(s => `<div class="node-pill" contenteditable="true">${s}</div>`).join('');
       document.getElementById('disp-hubs').innerHTML = (card.hubs || []).map(h => `<div class="node-pill hub" contenteditable="true">${h}</div>`).join('');
       document.getElementById('disp-actions').innerHTML = (card.actions || []).map(a => `<div class="node-pill" contenteditable="true">${a}</div>`).join('');
 
-      // Metrics
-      document.getElementById('disp-metrics-title').innerText = card.metrics_title || "KEY METRICS & COMPARISONS";
+      document.getElementById('disp-metrics-title').innerText = card.metrics_title || "KEY METRICS & RATINGS";
       document.getElementById('disp-metrics').innerHTML = (card.metrics || []).map(m => `
         <div class="bar-row">
           <div class="bar-info">
@@ -1225,7 +1075,6 @@
         </div>
       `).join('');
 
-      // Future Highlights
       document.getElementById('disp-future').innerHTML = (card.future || []).map(f => `
         <div class="future-item">
           <div class="future-title" contenteditable="true">▶ ${f.name}</div>
@@ -1233,8 +1082,7 @@
         </div>
       `).join('');
 
-      // SWOT / Pros & Cons
-      const swotHeaders = card.swot_headers || ["GREATEST STRENGTHS", "DEBATABLE GAPS", "STANDOUT ACHIEVEMENTS", "ERAS & RIVALS"];
+      const swotHeaders = card.swot_headers || ["GREATEST STRENGTHS", "KEY DRAWBACKS", "STANDOUT FACTORS", "COMPETITIVE RIVALS"];
       document.getElementById('swot-title-s').innerText = swotHeaders[0];
       document.getElementById('swot-title-w').innerText = swotHeaders[1];
       document.getElementById('swot-title-o').innerText = swotHeaders[2];
@@ -1250,7 +1098,7 @@
     function syncSidebarInputs() {
       const card = cards[currentCardIndex];
       if (!card) return;
-      document.getElementById('ctrl-subject').value = card.title;
+      document.getElementById('ctrl-subject').value = card.title === "Enter Infographic Title / Headline Here" ? "" : card.title;
       generateCompiledPrompt();
     }
 
@@ -1263,56 +1111,17 @@
     }
 
     function resetToCleanState() {
-      if (confirm("Reset current infographic to a clean template?")) {
-        cards = [{
-          badge: "CARD 1 / 1",
-          sector: "Topic Category",
-          title: "Top 15 Comparison: Overview & Ranking",
-          overview: "A simple, clear summary comparing the top options, what makes them unique, and how they rank against each other.",
-          verdict: "Bottom-line conclusion on which option comes out on top and why.",
-          col1_title: "TOP 15 RESULTS",
-          col1_tag: "RANKING",
-          col2_title: "KEY HIGHLIGHTS & STATS",
-          col2_tag: "DETAILS",
-          col3_title: "PROS, CONS & COMPARISON",
-          col3_tag: "BREAKDOWN",
-          diag_labels: ["Group 1", "Group 2", "Group 3"],
-          apps: Array(15).fill(null).map((_, i) => ({
-            name: `${i + 1}. Item / Person Name`,
-            role: "Category / Team / Brand",
-            strength: "Main strength or standout quality",
-            friction: "Notable drawback or limitation"
-          })),
-          sensors: ["Top Option A", "Top Option B", "Top Option C"],
-          hubs: ["Key Factor 1", "Key Factor 2"],
-          actions: ["Outcome 1", "Outcome 2", "Outcome 3"],
-          metrics_title: "OVERALL PERFORMANCE RATINGS",
-          metrics: [
-            { label: "Overall Quality / Skill", val: 88 },
-            { label: "Value / Consistency", val: 76 },
-            { label: "Popularity / Recognition", val: 92 }
-          ],
-          future: [
-            { name: "Rising Challengers", desc: "Newer options that could soon shake up this ranking." },
-            { name: "Long-Term Verdict", desc: "How these choices will hold up over the next few years." }
-          ],
-          swot_headers: ["BIGGEST PROS", "BIGGEST CONS", "STANDOUT POINTS", "RIVALS & CONTEXT"],
-          swot: {
-            strengths: ["Clear advantages that set the top picks apart", "Proven track record of high quality", "Reliable performance over time"],
-            weaknesses: ["Higher cost or steeper learning curve", "Areas where rivals have an edge", "Limitations to be aware of"],
-            opportunities: ["New features or upcoming seasons", "Great value compared to alternatives", "Ways these choices continue to improve"],
-            threats: ["Tough competition from newcomers", "Shifting trends and buyer preferences", "Changes in rules, pricing, or tech"]
-          }
-        }];
-        currentCardIndex = 0;
-        document.getElementById('ctrl-card-count').value = "1";
-        renderFilmstrip();
-        renderCurrentCard();
-        syncSidebarInputs();
-      }
+      cards = [getCleanCardTemplate(1, 1)];
+      currentCardIndex = 0;
+      document.getElementById('ctrl-card-count').value = "1";
+      document.getElementById('ctrl-subject').value = "";
+      document.getElementById('ctrl-directives').value = "";
+      renderFilmstrip();
+      renderCurrentCard();
+      generateCompiledPrompt();
     }
 
-    // Casual, Plain-English Prompt Engine (All 18 Frameworks)
+    // Prompt Engine
     function generateCompiledPrompt() {
       const subject = document.getElementById('ctrl-subject').value.trim() || "Top 15 Comparison";
       const angleKey = document.getElementById('ctrl-angle').value;
@@ -1457,7 +1266,7 @@ SCHEMA FOR EACH CARD OBJECT:
       }
     }
 
-    // Untainted 4K PNG Export Engine (Offscreen Clone via Blob)
+    // Untainted 4K PNG Export Engine
     async function downloadCurrentPng() {
       const targetCanvas = document.getElementById('infographic-canvas');
       if (!targetCanvas) return;
@@ -1467,7 +1276,6 @@ SCHEMA FOR EACH CARD OBJECT:
       exportBtn.innerText = "⏳ Exporting PNG...";
       exportBtn.disabled = true;
 
-      // 1. Create an isolated offscreen container with exact 2400x1350 bounds
       const offscreenContainer = document.createElement('div');
       offscreenContainer.style.position = 'fixed';
       offscreenContainer.style.left = '-10000px';
@@ -1477,12 +1285,10 @@ SCHEMA FOR EACH CARD OBJECT:
       offscreenContainer.style.overflow = 'hidden';
       offscreenContainer.style.zIndex = '-9999';
 
-      // 2. Clone the canvas DOM directly
       const clone = targetCanvas.cloneNode(true);
       clone.style.transform = 'none';
       clone.style.margin = '0';
 
-      // 3. Remove/replace local <img> elements to prevent canvas tainting
       const logoImgs = clone.querySelectorAll('img');
       logoImgs.forEach(img => {
         const placeholder = document.createElement('div');
@@ -1507,7 +1313,6 @@ SCHEMA FOR EACH CARD OBJECT:
           logging: false
         });
 
-        // Use toBlob for direct binary file download
         canvas.toBlob((blob) => {
           if (!blob) {
             alert("Error creating PNG image blob.");
@@ -1533,13 +1338,12 @@ SCHEMA FOR EACH CARD OBJECT:
       }
     }
 
+    // Always boots to clean blank state on reload
     window.onload = function() {
       const savedKey = localStorage.getItem('3sci_gemini_key');
       if (savedKey) document.getElementById('top-gemini-key').value = savedKey;
 
-      renderFilmstrip();
-      renderCurrentCard();
-      syncSidebarInputs();
+      resetToCleanState();
       autoFitCanvas();
     };
   </script>
