@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 2400px;
+    height: 1350px;
+    background-color: #080f17;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 30px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1e2c3c;
+    padding-bottom: 12px;
+  }
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .brand-logo {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .brand-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00e5be;
+    text-transform: uppercase;
+  }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .sector-pill {
+    font-size: 20px;
+    font-weight: 700;
+    color: #94a3b8;
+    background: #111e2e;
+    padding: 7px 20px;
+    border-radius: 6px;
+    border: 1px solid #23354a;
+    text-transform: uppercase;
+  }
+  .day-badge {
+    font-size: 22px;
+    font-weight: 800;
+    background: #00e5be;
+    color: #080f17;
+    padding: 7px 22px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Hero Section */
+  .hero-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    grid-gap: 30px;
+    align-items: stretch;
+    margin: 14px 0 16px 0;
+  }
+  .main-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  .overview-box {
+    background: #0f1925;
+    border-left: 6px solid #00e5be;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 20.5px;
+    line-height: 1.45;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Workspace 3-Column Layout */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.1fr 1.05fr;
+    grid-gap: 22px;
+    flex-grow: 1;
+    margin-bottom: 14px;
+  }
+
+  .panel {
+    background: #0e1724;
+    border: 1px solid #1c2b3d;
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1c2b3d;
+    padding-bottom: 8px;
+  }
+  .panel-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #38bdf8;
+  }
+  .panel-tag {
+    font-size: 14px;
+    font-weight: 800;
+    color: #64748b;
+    background: #182535;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  /* Left Panel: Top 15 Competitive Grid */
+  .table-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .app-row {
+    display: grid;
+    grid-template-columns: 175px 1fr 1fr;
+    align-items: center;
+    background: #121e2d;
+    padding: 7px 12px;
+    border-radius: 5px;
+    border-left: 3px solid #00e5be;
+    font-size: 15.5px;
+    gap: 10px;
+  }
+  .app-name {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .app-role {
+    font-size: 12.5px;
+    color: #00e5be;
+    display: block;
+  }
+  .app-strength {
+    color: #cbd5e1;
+    line-height: 1.25;
+  }
+  .app-friction {
+    color: #94a3b8;
+    line-height: 1.25;
+  }
+
+  /* Center Panel: Architecture & Ecosystem */
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .diagram-box {
+    background: #080f17;
+    border: 1px solid #1e2c3c;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .diagram-row {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagram-label {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+  }
+  .node-pills {
+    display: flex;
+    gap: 8px;
+  }
+  .node-pill {
+    background: #142130;
+    border: 1px solid #23374c;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+  }
+  .node-pill.hub {
+    border-color: #00e5be;
+    color: #00e5be;
+    background: rgba(0, 229, 190, 0.12);
+  }
+
+  /* Adoption Rates Graphic */
+  .adoption-box {
+    background: #080f17;
+    border: 1px solid #1e2c3c;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .adoption-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #38bdf8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bar-row {
+    margin-bottom: 6px;
+  }
+  .bar-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 3px;
+  }
+  .bar-track {
+    background: #172433;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00e5be, #38bdf8);
+    border-radius: 5px;
+  }
+
+  /* Future Horizons */
+  .future-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .future-item {
+    background: #121e2d;
+    border-left: 4px solid #f59e0b;
+    border-radius: 5px;
+    padding: 8px 12px;
+  }
+  .future-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fbbf24;
+    margin-bottom: 2px;
+  }
+  .future-text {
+    font-size: 14.5px;
+    color: #cbd5e1;
+    line-height: 1.35;
+  }
+
+  /* Right Panel: Detailed SWOT Grid */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+    flex-grow: 1;
+  }
+  .swot-card {
+    padding: 14px 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .swot-s { background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981; }
+  .swot-w { background: rgba(239, 68, 68, 0.12); border: 1.5px solid #ef4444; }
+  .swot-o { background: rgba(56, 189, 248, 0.12); border: 1.5px solid #38bdf8; }
+  .swot-t { background: rgba(245, 158, 11, 0.12); border: 1.5px solid #f59e0b; }
+
+  .swot-header {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 4px;
+  }
+  .swot-s .swot-header { color: #34d399; }
+  .swot-w .swot-header { color: #f87171; }
+  .swot-o .swot-header { color: #38bdf8; }
+  .swot-t .swot-header { color: #fbbf24; }
+
+  .swot-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .swot-ul li {
+    font-size: 15px;
+    color: #e2e8f0;
+    line-height: 1.35;
+    position: relative;
+    padding-left: 16px;
+  }
+  .swot-ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+  }
+  .swot-s .swot-ul li::before { color: #34d399; }
+  .swot-w .swot-ul li::before { color: #f87171; }
+  .swot-o .swot-ul li::before { color: #38bdf8; }
+  .swot-t .swot-ul li::before { color: #fbbf24; }
+
+  /* Executive Verdict Footer */
+  .summary-bar {
+    background: #0f1925;
+    border: 1px solid #1c2b3d;
+    border-left: 8px solid #00e5be;
+    border-radius: 8px;
+    padding: 14px 26px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .summary-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #00e5be;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .summary-text {
+    font-size: 19.5px;
+    color: #f8fafc;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* Sub-Footer */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #64748b;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-group">
+      <% if (typeof logo_src !== 'undefined' && logo_src) { %>
+        <img src="<%= logo_src %>" class="brand-logo" alt="3Sci Logo">
+      <% } %>
+      <div class="brand-title"><%= typeof brand !== 'undefined' ? brand : 'AI IS BEAUTIFUL BY 3SCI.COM' %></div>
+    </div>
+    <div class="header-meta">
+      <span class="sector-pill"><%= typeof sector !== 'undefined' ? sector : 'Strategic AI' %></span>
+      <span class="day-badge">DAY <%= typeof day_number !== 'undefined' ? day_number : 1 %> / 365</span>
+    </div>
+  </header>
+
+  <div class="hero-row">
+    <h1 class="main-title"><%= title %></h1>
+    <div class="overview-box"><%= overview %></div>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- Column 1: Top 15 Competitive Matrix -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">TOP 15 APPS & PLATFORMS</div>
+        <span class="panel-tag">MARKET LANDSCAPE</span>
+      </div>
+      <div class="table-scroll">
+        <% if (typeof top_15 !== 'undefined' && Array.isArray(top_15)) { %>
+          <% top_15.forEach(app => { %>
+            <div class="app-row">
+              <div>
+                <span class="app-name"><%= app.name %></span>
+                <span class="app-role"><%= app.role %></span>
+              </div>
+              <div class="app-strength"><%= app.strength %></div>
+              <div class="app-friction"><%= app.friction %></div>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Column 2: Architecture, Adoption Curve & Future Platforms -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">ECOSYSTEM, ADOPTION & FUTURE TECH</div>
+        <span class="panel-tag">ARCHITECTURE</span>
+      </div>
+
+      <div class="center-content">
+        <!-- Physical-to-Action Diagram -->
+        <div class="diagram-box">
+          <div class="diagram-row">
+            <span class="diagram-label">Sensors</span>
+            <div class="node-pills">
+              <% (typeof ecosystem !== 'undefined' && ecosystem && ecosystem.sensors ? ecosystem.sensors : ['Optical Cameras', 'IoT Sensors', 'Acoustic Array']).forEach(node => { %>
+                <div class="node-pill"><%= node %></div>
+              <% }) %>
+            </div>
+          </div>
+          <div class="diagram-row">
+            <span class="diagram-label">AI Hub</span>
+            <div class="node-pills">
+              <% (typeof ecosystem !== 'undefined' && ecosystem && ecosystem.hubs ? ecosystem.hubs : ['Edge Quantized LLM', 'Matter Mesh Gateway']).forEach(node => { %>
+                <div class="node-pill hub"><%= node %></div>
+              <% }) %>
+            </div>
+          </div>
+          <div class="diagram-row">
+            <span class="diagram-label">Actuation</span>
+            <div class="node-pills">
+              <% (typeof ecosystem !== 'undefined' && ecosystem && ecosystem.actions ? ecosystem.actions : ['HVAC Relays', 'Biometric Locks', 'Alert Triggers']).forEach(node => { %>
+                <div class="node-pill"><%= node %></div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adoption Benchmark Progress Bars -->
+        <div class="adoption-box">
+          <div class="adoption-title">
+            <span>DOMAIN ADOPTION PENETRATION</span>
+            <span style="color: #00e5be;">2026 BENCHMARK</span>
+          </div>
+          <% (typeof adoption_metrics !== 'undefined' ? adoption_metrics : [
+            { label: "Core Automation", val: 82 },
+            { label: "Predictive Analytics", val: 64 },
+            { label: "Autonomous Edge Agents", val: 38 }
+          ]).forEach(m => { %>
+            <div class="bar-row">
+              <div class="bar-info">
+                <span><%= m.label %></span>
+                <span><%= m.val %>%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: <%= m.val %>%;"></div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+
+        <!-- Future Platforms -->
+        <div class="future-box">
+          <% if (typeof future_platforms !== 'undefined' && Array.isArray(future_platforms)) { %>
+            <% future_platforms.forEach(f => { %>
+              <div class="future-item">
+                <div class="future-title">✦ <%= f.name %></div>
+                <div class="future-text"><%= f.desc %></div>
+              </div>
+            <% }) %>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: In-Depth SWOT Matrix -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">ADOPTION SWOT MATRIX</div>
+        <span class="panel-tag">STRATEGIC FEASIBILITY</span>
+      </div>
+      <div class="swot-grid">
+        <div class="swot-card swot-s">
+          <div class="swot-header">STRENGTHS</div>
+          <ul class="swot-ul">
+            <% (typeof swot !== 'undefined' && swot.strengths ? swot.strengths : []).forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="swot-card swot-w">
+          <div class="swot-header">WEAKNESSES</div>
+          <ul class="swot-ul">
+            <% (typeof swot !== 'undefined' && swot.weaknesses ? swot.weaknesses : []).forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="swot-card swot-o">
+          <div class="swot-header">OPPORTUNITIES</div>
+          <ul class="swot-ul">
+            <% (typeof swot !== 'undefined' && swot.opportunities ? swot.opportunities : []).forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="swot-card swot-t">
+          <div class="swot-header">THREATS</div>
+          <ul class="swot-ul">
+            <% (typeof swot !== 'undefined' && swot.threats ? swot.threats : []).forEach(item => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Banner -->
+  <div class="summary-bar">
+    <div class="summary-tag">EXECUTIVE VERDICT</div>
+    <div class="summary-text"><%= typeof summary !== 'undefined' ? summary : '' %></div>
+  </div>
+
+  <footer>
+    <span>3sci.com Intelligence Units • Automated Market Synthesis</span>
+    <span>Day <%= typeof day_number !== 'undefined' ? day_number : 1 %> of 365 Infographic Series</span>
+  </footer>
+
+</body>
+</html>
